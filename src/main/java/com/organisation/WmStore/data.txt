@@ -1,0 +1,13 @@
+{
+  "productName": "Apple",
+  "country": "UKR",
+  "price": "10",
+  "imageProduct": "D:\\Projects\\WmStore\\src\\main\\java\\com\\organisation\\WmStore\\img\\1561279239_6.jpg"
+}
+
+{
+  "productName": "Banana",
+  "country": "UK",
+  "price": "15",
+  "imageProduct": "D:\\Projects\\WmStore\\src\\main\\java\\com\\organisation\\WmStore\\img\\1630489225_19-papik-pro-p-banan-risunok-19.png"
+}

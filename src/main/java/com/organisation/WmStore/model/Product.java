@@ -1,5 +1,7 @@
 package com.organisation.WmStore.model;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -9,6 +11,7 @@ public class Product implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
     private Long id;
+    @NotNull
     private String productName;
     private String country;
     private String price;

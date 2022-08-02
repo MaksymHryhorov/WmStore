@@ -1,5 +1,6 @@
 package com.organisation.WmStore.service;
 
+import com.organisation.WmStore.exception.ProductNotFoundException;
 import com.organisation.WmStore.model.Product;
 import com.organisation.WmStore.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,6 @@ public class ProductService {
     }
 
     public Product addProduct(Product product) {
-        product.setProductName(product.toString());
 
         return productRepo.save(product);
     }
@@ -30,13 +30,13 @@ public class ProductService {
         return productRepo.save(product);
     }
 
-    public void deleteProduct(Long id) {
-        productRepo.deleteProductById(id);
+    public void deleteById(Long id) {
+        productRepo.deleteById(id);
     }
 
-    public Product findProductById(Long id) {
-        return productRepo.findProductById(id)
-                .orElseThrow(() -> new ProductNotFoundException ("Product by id " + id + " was not found"));
+    public Product findById(Long id) {
+        return productRepo.findById(id)
+                .orElseThrow(() -> new ProductNotFoundException("Product by id " + id + " was not found"));
     }
 
 }
