@@ -2,13 +2,18 @@ package com.organisation.WmStore.controller;
 
 import com.organisation.WmStore.model.Product;
 import com.organisation.WmStore.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 @RestController
+@CrossOrigin(origins="http://localhost:4200", methods = {RequestMethod.DELETE,
+RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT})
 @RequestMapping("/products")
 public class ProductController {
     private final ProductService productService;
