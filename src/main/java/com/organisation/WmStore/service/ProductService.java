@@ -17,23 +17,47 @@ public class ProductService {
         this.productRepo = productRepo;
     }
 
+    /**
+     * Add product to database
+     * @param product
+     * @return
+     */
     public Product addProduct(Product product) {
 
         return productRepo.save(product);
     }
 
+    /**
+     * Find product
+     * @return Product list
+     */
     public List<Product> findAllProducts() {
         return productRepo.findAll();
     }
 
+    /**
+     * Update product
+     * @param product for update
+     * @return Product
+     */
     public Product updateProduct(Product product) {
         return productRepo.save(product);
     }
 
+    /**
+     * Delete product by id
+     * @param id product
+     */
     public void deleteById(Long id) {
         productRepo.deleteById(id);
     }
 
+    /**
+     * Find product by id
+     * @param id product
+     * @return Product
+     * @throws ProductNotFoundException
+     */
     public Product findById(Long id) {
         return productRepo.findById(id)
                 .orElseThrow(() -> new ProductNotFoundException("Product by id " + id + " was not found"));
